@@ -450,30 +450,26 @@ export default class extends Component {
    * Render pagination
    * @return {object} react-dom
    */
-  renderPagination = () => {
+ renderPagination = () => {
      // By default, dots only show when `total` >= 2
     if (this.state.total <= 1) return null
 
     let dots = []
     const ActiveDot = this.props.activeDot || <View style={[{
-      backgroundColor: this.props.activeDotColor || '#007aff',
-      width: 8,
-      height: 8,
-      borderRadius: 4,
+      backgroundColor: this.props.activeDotColor || Color.White,
+      width: 12,
+      height: 2,
       marginLeft: 3,
       marginRight: 3,
       marginTop: 3,
-      marginBottom: 3
     }, this.props.activeDotStyle]} />
     const Dot = this.props.dot || <View style={[{
       backgroundColor: this.props.dotColor || 'rgba(0,0,0,.2)',
-      width: 8,
-      height: 8,
-      borderRadius: 4,
+      width: 12,
+      height: 2,
       marginLeft: 3,
       marginRight: 3,
       marginTop: 3,
-      marginBottom: 3
     }, this.props.dotStyle ]} />
     for (let i = 0; i < this.state.total; i++) {
       dots.push(i === this.state.index
